@@ -50,10 +50,11 @@ config.json
 *.bak
 /tmp/
 
-# 5. SISTEMAS OPERACIONAIS E IDEs
+# 5. SISTEMAS OPERACIONAIS E IDEs..
 
 .vscode/
 
 *.swp
 *.swo
 *~
+
