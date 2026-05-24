@@ -35,7 +35,7 @@ pip-delete-this-directory.txt
 
 # 3. AWS E SEGURANÇA
 
-# Chaves privadas e configurações de ambiente
+# Chaves privadas e configurações de ambiente...
 .env
 *.pem
 *.key
@@ -43,14 +43,14 @@ pip-delete-this-directory.txt
 credentials.csv
 config.json
 
-# 4. ARQUIVOS DO PROJETO (BACKUPS/TESTES)
+# 4. ARQUIVOS DO PROJETO (BACKUPS/TESTES)...
 
 *.zip
 *.tar.gz
 *.bak
 /tmp/
 
-# 5. SISTEMAS OPERACIONAIS E IDEs..
+# 5. SISTEMAS OPERACIONAIS E IDEs...
 
 .vscode/
 
