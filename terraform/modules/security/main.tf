@@ -37,3 +37,27 @@ resource "aws_iam_role_policy_attachment" "ssm_attach" {
   role       = aws_iam_role.ec2_role.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
 }
+
+# Política de Acesso Seguro ao S3
+resource "aws_iam_policy" "s3_write_policy" {
+  name        = "Lab-S3-Write-Policy"
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [{
+      Effect   = "Allow"
+      Action   = ["s3:PutObject", "s3:ListBucket"]
+      Resource = [var.bucket_arn, "${var.bucket_arn}/*"]
+    }]
+  })
+}
+
+resource "aws_iam_role_policy_attachment" "s3_attach" {
+  role       = aws_iam_role.ec2_role.name
+  policy_arn = aws_iam_policy.s3_write_policy.arn
+}
+
+# Instancia
+resource "aws_iam_instance_profile" "ec2_profile" {
+  name = "Lab-EC2-Instance-Profile"
+  role = aws_iam_role.ec2_role.name
+}
