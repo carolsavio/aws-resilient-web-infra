@@ -1,0 +1,59 @@
+# 1. TERRAFORM (INFRAESTRUTURA)
+
+# Diretório local do Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+
+# Arquivos de variáveis
+*.tfvars
+*.tfvars.json
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Logs de crash do Terraform
+crash.log
+crash.*.log
+
+# 2. PYTHON (AUTOMAÇÃO)
+# Arquivos compilados do Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ambientes virtuais
+venv/
+.venv/
+env/
+.env_python/
+
+# Logs do gerenciador de pacotes
+pip-log.txt
+pip-delete-this-directory.txt
+
+# 3. AWS E SEGURANÇA
+
+# Chaves privadas e configurações de ambiente
+.env
+*.pem
+*.key
+*.cer
+credentials.csv
+config.json
+
+# 4. ARQUIVOS DO PROJETO (BACKUPS/TESTES)
+
+*.zip
+*.tar.gz
+*.bak
+/tmp/
+
+# 5. SISTEMAS OPERACIONAIS E IDEs
+
+.vscode/
+
+*.swp
+*.swo
+*~
