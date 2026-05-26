@@ -61,3 +61,68 @@ resource "aws_iam_instance_profile" "ec2_profile" {
   name = "Lab-EC2-Instance-Profile"
   role = aws_iam_role.ec2_role.name
 }
+
+#---
+# SG — Zabbix Server
+resource "aws_security_group" "zabbix_sg" {
+  name        = "zabbix-server-sg"
+  vpc_id      = var.vpc_id
+  description = "Zabbix Server: dashboard e coleta de agentes"
+
+  ingress {
+    description = "Dashboard web"
+    from_port   = 8080
+    to_port     = 8080
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    description = "Agentes modo ativo"
+    from_port   = 10051
+    to_port     = 10051
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+
+# Porta 10050 no SG da web — Zabbix 
+resource "aws_security_group_rule" "allow_zabbix_agent" {
+  type                     = "ingress"
+  from_port                = 10050
+  to_port                  = 10050
+  protocol                 = "tcp"
+  security_group_id        = aws_security_group.web_sg.id
+  source_security_group_id = aws_security_group.zabbix_sg.id
+  description              = "Zabbix Agent coleta passiva"
+}
+
+# IAM — Zabbix (SSM apenas, sem S3)
+resource "aws_iam_role" "zabbix_role" {
+  name = "Lab-Zabbix-Execution-Role"
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [{
+      Action    = "sts:AssumeRole"
+      Effect    = "Allow"
+      Principal = { Service = "ec2.amazonaws.com" }
+    }]
+  })
+}
+
+resource "aws_iam_role_policy_attachment" "zabbix_ssm_attach" {
+  role       = aws_iam_role.zabbix_role.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
+}
+
+resource "aws_iam_instance_profile" "zabbix_profile" {
+  name = "Lab-Zabbix-Instance-Profile"
+  role = aws_iam_role.zabbix_role.name
+}
