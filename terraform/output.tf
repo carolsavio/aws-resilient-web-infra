@@ -1,6 +1,6 @@
 output "web_server_public_ip" {
   description = "IP Público para acessar o Apache"
-  value       = module.compute.public_ip
+  value       = module.compute.web_public_ip
 }
 
 output "s3_bucket_name" {

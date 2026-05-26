@@ -18,4 +18,7 @@ module "compute" {
   subnet_id            = module.network.subnet_id
   security_group_ids   = [module.security.web_sg_id]
   iam_instance_profile = module.security.iam_instance_profile_name
+
+  zabbix_sg_id                 = module.security.zabbix_sg_id
+  zabbix_instance_profile_name = module.security.zabbix_instance_profile_name
 }
