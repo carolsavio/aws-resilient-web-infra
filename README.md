@@ -11,7 +11,7 @@
 
 >## Aviso
 
->A infraestrutura ainda estão sendo construidos e refinados. Algumas instruções do README podem ficar temporariamente desatualizadas...
+>A infraestrutura e scripts ainda estão sendo construidos e refinados. Algumas instruções do README podem ficar temporariamente desatualizadas...
 
 ## Visão Geral
 Este repositório contém a documentação e os scripts para a implementação de uma infraestrutura web resiliente na AWS. O projeto demonstra o ciclo de vida completo de uma operação em nuvem, partindo do provisionamento via Infrastructure as Code (IaC) até a implementação de rotinas de backup e monitoramento contínuo.
