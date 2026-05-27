@@ -1,9 +1,11 @@
-output "web_server_public_ip" {
-  description = "IP Público para acessar o Apache"
-  value       = module.compute.web_public_ip
+output "zabbix_instance_id" {
+  value = module.compute.zabbix_instance_id
 }
 
-output "s3_bucket_name" {
-  description = "Nome do bucket gerado para configurar no script Python"
-  value       = module.storage.bucket_name
+output "web_instance_id" {
+  value = module.compute.web_instance_id
+}
+
+output "zabbix_public_ip" {
+  value = module.compute.zabbix_public_ip
 }
