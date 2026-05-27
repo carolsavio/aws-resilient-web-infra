@@ -44,5 +44,5 @@ O Terraform irá pedir uma confirmação de segurança, digite `yes` se estiver 
 ### Passo 6: Destruição do Ambiente
 Para evitar custos não planejados na sua conta AWS após a conclusão dos testes do laboratório, você pode destruir tudo com um cmando só:
 ```
-terraform distroy
+terraform destroy
 ```
