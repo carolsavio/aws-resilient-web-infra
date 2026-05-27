@@ -8,6 +8,7 @@
 ![Zabbix](https://img.shields.io/badge/Zabbix-D40000?style=flat&logo=Zabbix&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-WIP-orange?style=flat)
 
+![Descrição da imagem](./docs/images/banner-infra.png)
 
 >## Aviso
 
