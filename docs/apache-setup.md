@@ -345,3 +345,6 @@ Ao concluir todos os passos:
 ➤ Monitoramento do Apache ativo
 
 ➤ Página web personalizada publicada
+
+#### Implementação do Backup com Python e Crom:
+➤ [Acesse o guia de Backup](/docs/backup-setup.md)

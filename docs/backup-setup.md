@@ -40,3 +40,7 @@ chmod 644 /etc/cron.d/web-backup
 cat /etc/cron.d/web-backup
  ``` 
  ![](/docs/images/cron-config.png)
+
+ ---
+ Retornar para o README:
+ ➤ [README](/README.md)
