@@ -106,3 +106,11 @@ Para obter instruções completas de configuração, provisionamento de infraest
 
 ➤ [Troubleshooting](/docs/troubleshooting.md)
 
+## Destruição do Ambiente
+Para evitar custos não planejados na sua conta AWS após a conclusão dos testes do laboratório, você pode destruir tudo com um comando só:
+```
+terraform destroy
+``` 
+
+
+
