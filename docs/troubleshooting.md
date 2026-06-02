@@ -60,7 +60,7 @@ Em seguida removi o padrão e reiniciei o Nginx
 rm /etc/nginx/sites-enabled/default
 systemctl restart nginx
 ``` 
-#### Hostname do agente incorreto
+### Hostname do agente incorreto
 O Zabbix Agent aparece como `Zabbix server` em vez do hostname configurado.
 
 **Causa:** O arquivo zabbix_agent2.conf foi editado mas o agente não foi reiniciado.
