@@ -289,4 +289,4 @@ User menu → Profile → Change password
 
 Após a configuração inicial do Zabbix, prossiga para a configuração da instância Apache.
 
-➤ [Guia de instalação do Apache](/docs/apachae-setup.md)
+➤ [Guia de instalação do Apache](/docs/apache-setup.md)
