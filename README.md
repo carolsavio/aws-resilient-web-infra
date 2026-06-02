@@ -30,3 +30,4 @@ Este repositório contém a documentação e os scripts para a implementação d
 Para obter instruções completas de configuração, provisionamento de infraestrutura e etapas de reprodução do projeto, consulte:
 
 ➤ [Guia de primeiros passos](./docs/setup.md)
+
