@@ -264,6 +264,7 @@ Revise as configurações e continue.
 ### Step 5 — Finalização
 
 Finalize a instalação.
+
 ![Zabbix sucessso na instalação](/docs/images/abbix-success-installation.png)
 
 ---
