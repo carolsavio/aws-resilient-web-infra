@@ -346,5 +346,7 @@ Ao concluir todos os passos:
 
 ➤ Página web personalizada publicada
 
+
+
 #### Implementação do Backup com Python e Crom:
 ➤ [Acesse o guia de Backup](/docs/backup-setup.md)
