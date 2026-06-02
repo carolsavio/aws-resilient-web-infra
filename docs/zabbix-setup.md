@@ -175,3 +175,118 @@ Altere para:
 Salve o arquivo e feche o editor.
 
 O valor `_` em `server_name` atua como um coringa, permitindo acesso ao frontend independentemente do nome de domínio utilizado. Em ambientes de produção, recomenda-se configurar um domínio específico.
+
+## 3. Inicialização e habilitação dos serviços
+
+Habilite os serviços necessários para o funcionamento do Zabbix:
+
+```
+systemctl enable postgresql zabbix-server zabbix-agent2 nginx php8.1-fpm
+```
+
+Inicie os serviços:
+
+```
+systemctl start postgresql zabbix-server zabbix-agent2 nginx php8.1-fpm
+```
+
+### Verificação do status dos serviços
+
+Verifique se todos os serviços estão em execução:
+
+```
+systemctl status zabbix-server nginx php8.1-fpm postgresql --no-pager
+```
+
+Todos os serviços devem apresentar status:
+
+`Active: active (running)`
+
+---
+
+## 4. Suporte ao PostgreSQL no frontend
+
+Caso o frontend do Zabbix não carregue corretamente, instale o suporte ao PostgreSQL para PHP:
+
+```bash
+apt-get install -y php8.1-pgsql
+systemctl restart php8.1-fpm nginx
+```
+
+Após isso, recarregue a página do assistente de instalação no navegador.
+
+---
+
+## 5. Acesso ao Zabbix
+
+Acesse o frontend no navegador:
+
+```text
+http://<zabbix_public_ip>:8080
+```
+
+Exemplo:
+
+```text
+http://13.220.7.101:8080
+```
+
+---
+
+## 6. Assistente de configuração inicial
+![Tela te instalação do Zabbix](/docs/images/zabbix-installation-screen.png)
+
+No assistente de instalação:
+
+### Passo 1 — Checagem de pré-requisitos (Prerequisites check)
+
+Verifique se todos os itens estão marcados como `OK` e prossiga.
+
+### Passo 2 — Configuração do DB (Database configuration)
+
+Preencha os dados:
+
+* Database type: PostgreSQL
+* Host: localhost
+* Port: 5432
+* Database name: zabbix
+* User: zabbix
+* Password: `<senha configurada anteriormente>`
+
+### Passo 3 — Confuguração (Settings)
+
+Defina o nome da instância (opcional), por exemplo: `Zabbix Lab`.
+
+### Step 4 — Sumário
+
+Revise as configurações e continue.
+
+### Step 5 — Finalização
+
+Finalize a instalação.
+![Zabbix sucessso na instalação](/docs/images/abbix-success-installation.png)
+
+---
+
+## 7. Primeiro acesso
+
+Após concluir a instalação, acesse a tela de login do Zabbix.
+
+Credenciais padrão:
+
+* User: `Admin`
+* Password: `zabbix`
+
+Após o login inicial, altere a senha padrão em:
+
+```
+User menu → Profile → Change password
+```
+
+---
+
+## 8. Próximo passo
+
+Após a configuração inicial do Zabbix, prossiga para a configuração da instância Apache.
+
+➤ [Guia de instalação do Apache](/docs/apachae-setup.md)
