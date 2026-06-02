@@ -41,7 +41,16 @@ terraform apply
 ```
 O Terraform irá pedir uma confirmação de segurança, digite `yes` se estiver tudo certo e aperte `Enter` para prosseguir.
 
-### Passo 6: Destruição do Ambiente
+### Passo 6: Salve os outputs gerados para seguir
+
+![Print dos outputs gerados](/docs/images/apply-success-and-outputs.png)
+
+Depois de tudo salvo:
+
+➤ [Siga para o guia do Zabbix](/docs/zabbix-setup.md)
+
+---
+### Passo 7: Destruição do Ambiente
 Para evitar custos não planejados na sua conta AWS após a conclusão dos testes do laboratório, você pode destruir tudo com um cmando só:
 ```
 terraform destroy
