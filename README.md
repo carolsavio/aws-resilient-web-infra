@@ -10,10 +10,6 @@
 
 ![Descrição da imagem](./docs/images/banner-infra.png)
 
->## Aviso
-
->A infraestrutura e scripts ainda estão sendo construidos e refinados. Algumas instruções do guia `setup` podem ficar temporariamente desatualizadas...
-
 ## Visão Geral
 Este projeto implementa um servidor web Apache hospedado na AWS, monitorado em tempo real pelo Zabbix e com backup diário automatizado para o S3. Todo o acesso às instâncias é feito via AWS Systems Manager, sem nenhuma chave SSH.
 
