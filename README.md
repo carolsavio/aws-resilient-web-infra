@@ -66,10 +66,10 @@ aws-resilient-web-infra/
 ```
 ## Pré-requisitos
 
-Conta AWS com permissões de EC2, S3, IAM e SSM
-Terraform
-AWS CLI configurado
-Session Manager Plugin instalado
+- Conta AWS com permissões de EC2, S3, IAM e SSM
+- Terraform
+- AWS CLI configurado
+- Session Manager Plugin instalado
 
 ## Como executar:
 Clone o repositório:
